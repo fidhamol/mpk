@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .content {
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .read-more-btn {
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="article-f">
+        <p class="about-content">We are a coadunation of passionate,
+            talented and dedicated people who
+            deliver effective IT services that helps you to achieve your
+            business targets easily. For years we have been serving our
+            customers with innovative solutions to help them perform
+            their day to day business activities efficiently and with
+            ease.</p>
+
+        <div class="full-article">
+            <p class="about-content">We generate a distinct identity for
+                your
+                business and trigger your chances of growth and success
+                no matter how complex is your working field. When you
+                put your trust in us, we dedicate you our talented
+                workforce, time and years of expertise and leave not a
+                single stone un turned in making your business a big
+                hit! Our client’s website success is our business.
+                That’s why we strive to offer highly competitive rates
+                on web application development and the best quality
+                service. We treat every client’s project as a new way to
+                implement our unique service packages and create a world
+                class website that’s both search engine and user
+                friendly. Whatever package you choose from us, you’re
+                assured of quality service, on time delivery and pocket
+                friendly rates.
+            </p>
+        </div>
+        <a href="#" class="read-more">Read More ></a>
+    </div>
+
+
+    <script>
+        // Get all the "Read More" links on the page
+        const readMoreLinks = document.querySelectorAll(".read-more");
+
+        // Add click event listeners to each "Read More" link
+        readMoreLinks.forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent the link from navigating to a new page
+                const article = this.closest(".article-f");
+                const fullArticle = article.querySelector(".full-article");
+
+                if (fullArticle.style.display === "none" || fullArticle.style.display === "") {
+                    fullArticle.style.display = "block";
+                    this.textContent = "Read Less";
+                } else {
+                    fullArticle.style.display = "none";
+                    this.textContent = "Read More";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
