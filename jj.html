@@ -4,75 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
-        .content {
-            max-height: 100px;
+        /* ---------------------------- */
+        /* Défilement de droite à gauche */
+        .marquee-rtl {
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            /* important */
+            width: 90%;
+            max-width: 80em;
+            /* background-color: black;
+            color: rgb(255, 255, 255); */
+            /* A ADAPTER */
         }
 
-        .read-more-btn {
+        .marquee-rtl>div {
+            display: inline-block;
+            /* important */
+            white-space: nowrap;
+            /* important */
+            animation: defilement-rtl 15s infinite linear;
+            /* défilement */
             cursor: pointer;
-            color: blue;
+            padding: 10px 2em 10px 100%;
+        }
+
+        .marquee-rtl:hover>div {
+            animation-play-state: paused;
+            /* met en pause le défilement */
+        }
+
+        .marquee-rtl>div:first-letter {
+            font-weight: 700;
+            color: #8c52ff;
+        }
+
+        @keyframes defilement-rtl {
+            0% {
+                -webkit-transform: translate(0);
+                transform: translate(0);
+            }
+
+            100% {
+                -webkit-transform: translate(-100%);
+                transform: translate(-100%);
+            }
+        }
+
+        /* ---------------------------- */
+        /* texte sur plusieurs lignes automatiquement */
+        .marquee-multi-lignes>div {
+        
+            width: 90%;
+            white-space: normal;
+            /* important */
+        }
+
+        .marquee-rtl {
+            margin: 2em auto;
+            /* border: 10px solid #120f18;
+            box-shadow: 0 .25em .5em #5f5e5e, inset 0 0 1em .25em #605f5f; */
+        }
+
+        .marquee-rtl>div {
+            font-size: 1.5em;
         }
     </style>
+    <title>Number Animation</title>
 </head>
 
 <body>
 
-    <div class="article-f">
-        <p class="about-content">We are a coadunation of passionate,
-            talented and dedicated people who
-            deliver effective IT services that helps you to achieve your
-            business targets easily. For years we have been serving our
-            customers with innovative solutions to help them perform
-            their day to day business activities efficiently and with
-            ease.</p>
 
-        <div class="full-article">
-            <p class="about-content">We generate a distinct identity for
-                your
-                business and trigger your chances of growth and success
-                no matter how complex is your working field. When you
-                put your trust in us, we dedicate you our talented
-                workforce, time and years of expertise and leave not a
-                single stone un turned in making your business a big
-                hit! Our client’s website success is our business.
-                That’s why we strive to offer highly competitive rates
-                on web application development and the best quality
-                service. We treat every client’s project as a new way to
-                implement our unique service packages and create a world
-                class website that’s both search engine and user
-                friendly. Whatever package you choose from us, you’re
-                assured of quality service, on time delivery and pocket
-                friendly rates.
-            </p>
-        </div>
-        <a href="#" class="read-more">Read More ></a>
+    <p>Exemple 1 : Le texte à afficher est <b>plus long</b> que la largeur de la fenêtre de défilement.</p>
+    <div class="marquee-rtl">
+       <div><img src="https://www.eatingonadime.com/wp-content/uploads/2015/11/cheeseburger-sliders-13-square.jpg" alt=""height="400px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.eatingonadime.com/wp-content/uploads/2015/11/cheeseburger-sliders-13-square.jpg" alt=""height="400px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.eatingonadime.com/wp-content/uploads/2015/11/cheeseburger-sliders-13-square.jpg" alt=""height="400px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.eatingonadime.com/wp-content/uploads/2015/11/cheeseburger-sliders-13-square.jpg" alt=""height="400px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.eatingonadime.com/wp-content/uploads/2015/11/cheeseburger-sliders-13-square.jpg" alt=""height="400px">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <!-- <div>Digital Marketing &nbsp;&nbsp;&nbsp;&nbsp; Google Ads &nbsp;&nbsp;&nbsp;&nbsp; Web Design &nbsp;&nbsp;&nbsp;&nbsp; Seo &nbsp;&nbsp;&nbsp;&nbsp;Texte défilant <b>plus long</b> que la</div> -->
     </div>
 
+   
 
-    <script>
-        // Get all the "Read More" links on the page
-        const readMoreLinks = document.querySelectorAll(".read-more");
 
-        // Add click event listeners to each "Read More" link
-        readMoreLinks.forEach(function (link) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent the link from navigating to a new page
-                const article = this.closest(".article-f");
-                const fullArticle = article.querySelector(".full-article");
 
-                if (fullArticle.style.display === "none" || fullArticle.style.display === "") {
-                    fullArticle.style.display = "block";
-                    this.textContent = "Read Less";
-                } else {
-                    fullArticle.style.display = "none";
-                    this.textContent = "Read More";
-                }
-            });
-        });
-    </script>
 
 </body>
 
