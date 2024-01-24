@@ -46,9 +46,9 @@
             cursor: pointer;
             padding: 10px 2em 10px 100%;
         }
-        .marquee-rtl>div>img {
-            
-        }
+
+        .marquee-rtl>div>img {}
+
         .marquee-rtl:hover>div {
             animation-play-state: paused;
             /* met en pause le défilement */
@@ -89,6 +89,7 @@
         .marquee-rtl>div {
             font-size: 1.5em;
         }
+
         .col_half {
             width: 49%;
         }
@@ -131,11 +132,10 @@
             margin-bottom: 20px;
         }
 
+
         .end {
             margin-right: 0 !important;
         }
-
-        /* Column Grids End */
 
         .wrapper {
             width: 980px;
@@ -184,6 +184,21 @@
             display: table;
             color: #8c52ff;
         }
+
+        /* Responsive styles for two columns */
+
+        @media (max-width: 767px) {
+            .wrapper {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            .counter {
+                width: 48%;
+                margin: 0 1%;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 
@@ -211,16 +226,15 @@
                         <ul class="primary-menu nav nav-pills">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="http://localhost:3000/#clients">Clients</a></li>
+                            <li class="nav-item"><a class="nav-link" href="http://localhost:3000/#clients">Clients</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
                         </ul>
                         <!-- End Mainmanu Nav -->
                     </nav>
                     <!-- Start Header Right  -->
-                     <div class="header-right">
-                        <a class="rn-btn" target="_blank"
-                            href="https://wa.link/f3siyz"><span>GET GOUTE</span></a>
+                    <div class="header-right">
+                        <a class="rn-btn" target="_blank" href="https://wa.link/f3siyz"><span>GET GOUTE</span></a>
                         <div class="hamberger-menu d-block d-xl-none">
                             <i id="menuBtn" class="feather-menu humberger-menu"></i>
                         </div>
@@ -378,7 +392,7 @@
                                     alt="" height="800px">&nbsp;&nbsp;&nbsp;&nbsp;<img
                                     src="https://images.pexels.com/photos/19548535/pexels-photo-19548535/free-photo-of-dutch-bicycle.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                     alt="" height="800px">&nbsp;&nbsp;&nbsp;&nbsp;
-                                </div>
+                            </div>
                             <!-- <div>Digital Marketing &nbsp;&nbsp;&nbsp;&nbsp; Google Ads &nbsp;&nbsp;&nbsp;&nbsp; Web Design &nbsp;&nbsp;&nbsp;&nbsp; Seo &nbsp;&nbsp;&nbsp;&nbsp;Texte défilant <b>plus long</b> que la</div> -->
                         </div>
                         <br>
@@ -501,7 +515,7 @@
             <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
             <p class="count-text ">SomeText GoesHere</p>
         </div>
-
+        
         <div class="counter col_fourth">
             <i class="fa fa-lightbulb-o fa-2x"></i>
             <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
@@ -1755,14 +1769,14 @@
                 <div class="col-lg-12">
                     <div class="footer-area text-center">
 
-                          <!-- <div class="logo">
+                        <!-- <div class="logo">
                             <a href="index.html">
                                 <img src="assets/images/logo/logo.png" alt="logo">
                             </a>
                         </div> -->
 
-                        <p class="description mt--30">© 2023 Muhsin Melayil - Developed by <a
-                                target="_blank" href="https://www.linkedin.com/in/fidha-tp/">Fidha Mol TP</a></p>
+                        <p class="description mt--30">© 2023 Muhsin Melayil - Developed by <a target="_blank"
+                                href="https://www.linkedin.com/in/fidha-tp/">Fidha Mol TP</a></p>
                     </div>
                 </div>
             </div>
